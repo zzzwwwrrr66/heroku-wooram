@@ -44,6 +44,15 @@ export default {
 
   // server setup
   server : {
-    port : process.env.NODE_ENV === 'production' ? null : 5000,
+    port : process.env.NODE_ENV === 'production' 
+    ? null 
+    : 5000,
+  },
+
+  // env config
+  env: {
+    baseURL: process.env.NODE_ENV === 'production' 
+    ? `https://my-json-server.typicode.com/zzzwwwrrr66/heroku-wooram-api` 
+    : `http://localhost:3000`
   }
 }

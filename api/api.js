@@ -1,13 +1,17 @@
 import axios from 'axios';
 
+const instance = axios.create({
+  baseURL : process.env.baseURL,
+});
+
 const fetchDeailId = function(id) {
-  return axios.get(`http://localhost:3000/products/${id}`);
+  return instance.get(`/products/${id}`);
 }
 
 
 // GET /posts?title_like=server
 const fetchSearchByKeyword = function(keyword) {
-  return axios.get(`http://localhost:3000/products`, {
+  return instance.get(`/products`, {
     params: {
       name_like : keyword,
     }
@@ -15,18 +19,17 @@ const fetchSearchByKeyword = function(keyword) {
 } 
 
 const createCartItem = function(cartItem) {
-  return axios.post(`http://localhost:3000/carts`, {
+  return instance.post(`/carts`, {
     ...cartItem
   });
 }
 
 const getCartItem = function(cartItem) {
-  return axios.get(`http://localhost:3000/carts`);
+  return instance.get(`/carts`);
 }
 
 const deleteCartItem = function(itemId) {
-  return axios.delete(`http://localhost:3000/carts/${itemId}`);
+  return instance.delete(`/carts/${itemId}`);
 }
 
- 
 export { fetchDeailId, fetchSearchByKeyword, createCartItem, getCartItem, deleteCartItem }
