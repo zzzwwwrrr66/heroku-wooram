@@ -45,7 +45,7 @@ export default {
   // server setup
   server : {
     port : process.env.NODE_ENV === 'production' 
-    ? process.env.PORT 
+    ? null 
     : 5000,
   },
 
