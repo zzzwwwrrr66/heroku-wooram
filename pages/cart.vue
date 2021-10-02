@@ -32,6 +32,8 @@
 import {deleteCartItem} from '@/api/api.js';
 
 export default {
+  name: `Cart`,
+
   // async asyncData({store}){
   //     const {data} = await store.dispatch('GET_CART')
   //     return { carts: data }
@@ -48,6 +50,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'cart wooram' },
+      { hid: 'og:description', name: 'og:description', content: 'cart wooram' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
