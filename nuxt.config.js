@@ -1,3 +1,5 @@
+const isProduction = process.env.NODE_ENV === 'production'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -44,14 +46,14 @@ export default {
 
   // server setup
   server : {
-    port : process.env.NODE_ENV === 'production' 
+    port : isProduction 
     ? null 
     : 5000,
   },
 
   // env config
   env: {
-    baseURL: process.env.NODE_ENV === 'production' 
+    baseURL: isProduction
     ? `https://my-json-server.typicode.com/zzzwwwrrr66/heroku-wooram-api` 
     : `http://localhost:3000`
   }
