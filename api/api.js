@@ -4,10 +4,13 @@ const instance = axios.create({
   baseURL : process.env.baseURL,
 });
 
+const getProducts = function() {
+  return instance.get(`/products/`)
+}
+
 const fetchDeailId = function(id) {
   return instance.get(`/products/${id}`);
 }
-
 
 // GET /posts?title_like=server
 const fetchSearchByKeyword = function(keyword) {
@@ -32,4 +35,4 @@ const deleteCartItem = function(itemId) {
   return instance.delete(`/carts/${itemId}`);
 }
 
-export { fetchDeailId, fetchSearchByKeyword, createCartItem, getCartItem, deleteCartItem }
+export { getProducts, fetchDeailId, fetchSearchByKeyword, createCartItem, getCartItem, deleteCartItem }
