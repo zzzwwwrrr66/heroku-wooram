@@ -37,14 +37,21 @@ export default {
   //     return { carts: data }
   // },
   async fetch() {
-    console.log(this);
     await this.$store.dispatch('GET_CART');
   },
-  data() {
-    return {
-      // cartItems: this.$store.state.cartList
-    }
-  },
+  title: 'cart',
+    htmlAttrs: {
+      lang: 'en'
+    },
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'cart wooram' },
+      { name: 'format-detection', content: 'telephone=no' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
   created() {
     // console.log(this.testItems);
   },
