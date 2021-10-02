@@ -39,7 +39,8 @@ export default {
   async fetch() {
     await this.$store.dispatch('GET_CART');
   },
-  title: 'cart',
+  head: {
+    title: 'cart',
     htmlAttrs: {
       lang: 'en'
     },
@@ -52,6 +53,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
+  },
   created() {
     // console.log(this.testItems);
   },
