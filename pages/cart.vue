@@ -40,7 +40,7 @@ export default {
     await this.$store.dispatch('GET_CART');
   },
   head: {
-    title: 'cart',
+    title: 'cart-wooram',
     htmlAttrs: {
       lang: 'en'
     },
