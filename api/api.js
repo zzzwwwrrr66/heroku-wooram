@@ -22,12 +22,11 @@ const fetchSearchByKeyword = function(keyword) {
 } 
 
 const createCartItem = function(cartItem) {
-  return instance.post(`/carts`, {
-    ...cartItem
-  });
+  console.log(cartItem)
+  return instance.post(`/carts`, cartItem);
 }
 
-const getCartItem = function(cartItem) {
+const getCartItem = function() {
   return instance.get(`/carts`);
 }
 

@@ -31,6 +31,7 @@ export const mutations = {
 export const actions = {
   async GET_CART({commit}) {
     const { data } = await getCartItem();
+    console.log(data);
     // const newCartItem = data.map(v=> ({
     //   ...data,
     //   imageUrl : `${data.imageUrl}/${Math.random()}`,

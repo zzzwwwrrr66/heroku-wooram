@@ -31,11 +31,8 @@ export default {
   methods: {
     async addToCart() {
       try {
-        const res = await createCartItem(this.product);
-        console.log(res);
-        if(res.statusText === 'Created' && res.status === 201) {
-          this.$store.dispatch('GET_CART')
-        }
+        await createCartItem(this.product);
+        this.$store.dispatch('GET_CART');
       } catch(err) {
         return false;
       }

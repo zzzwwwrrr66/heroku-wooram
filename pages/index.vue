@@ -84,7 +84,9 @@ export default {
     },
     
   },
-
+  created() {
+    this.$store.dispatch('GET_CART');
+  }
   
   // data() {
   //   return {

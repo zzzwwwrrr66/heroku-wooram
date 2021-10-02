@@ -1,6 +1,7 @@
 const isProduction = process.env.NODE_ENV === 'production'
 
 export default {
+  target: "static",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'learn-nuxt',
